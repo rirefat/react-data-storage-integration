@@ -1,17 +1,34 @@
+//======================================== Functions for loading more describe part ======================================== 
 const loadMore =(description)=>{
     alert(description);
 }
+
+//=========================================== localStorage functionality section ===========================================
 const addToCart = (id) => {
-    const quantity = localStorage.getItem(id);
-    if(quantity){
-        console.log("This Product is already existed in your cart");
-        const newQty = parseInt(quantity)+1;
-        localStorage.setItem(id,newQty);
+    let shoppingCart={};
+    // let shoppingCart;
+    
+    // get the shopping cart 
+    const storedCart =localStorage.getItem('shopping-cart');
+    if(storedCart){
+        shoppingCart=JSON.parse(storedCart)
     }
     else{
-        console.log("product:", id, "is added");
-        localStorage.setItem(id,1);
+        shoppingCart={};
     }
+
+
+    // add quantity
+    const quantity = shoppingCart[id];
+    if(quantity){
+        const newQty = quantity+1;
+        shoppingCart[id]=newQty;
+    }
+    else{
+        shoppingCart[id] = 1;
+    }
+    localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
+
 }
 
 export {loadMore,addToCart}
