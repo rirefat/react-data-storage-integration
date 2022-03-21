@@ -1,0 +1,12 @@
+.single-product{
+    border: 1px solid gainsboro;
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+}
+img{
+    width: 15%;
+}
+.load-more-btn{
+    cursor: pointer;
+}
