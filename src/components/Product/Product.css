@@ -3,10 +3,18 @@
     background-color: white;
     padding: 8px;
     border-radius: 8px;
+    position: relative;
 }
 img{
     width: 15%;
 }
 .load-more-btn{
     cursor: pointer;
+    color: grey;
+    font-size: 15px;
+}
+.btn-area{
+    position: absolute;
+    bottom: 5px;
+    left: 25%;
 }
