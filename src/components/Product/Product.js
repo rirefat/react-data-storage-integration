@@ -1,5 +1,5 @@
 import React from 'react';
-import { addToCart, loadMore } from '../Utilities/functions';
+import { addToCart, loadMore, removeFromCart } from '../Utilities/functions';
 import './Product.css'
 
 const Product = (props) => {
@@ -16,6 +16,7 @@ const Product = (props) => {
             <p><strong>Rating: </strong>{rating.rate}</p>
             <h3>Price: ${price}</h3>
             <button onClick={()=>addToCart(id)}>Add To Cart</button>
+            <button onClick={()=>removeFromCart(id)}>Remove From Cart</button>
         </div>
     );
 };
